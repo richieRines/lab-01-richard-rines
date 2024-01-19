@@ -2,10 +2,11 @@
 title: "Lab 01 - Hello R!"
 author: "Richard Rines"
 output: 
-  tufte::tufte_html:
-    css: ../lab.css
-    tufte_variant: "envisioned"
-    highlight: pygments
+  html_document: 
+    fig_width: 6
+    fig_height: 4
+    highlight: zenburn
+    theme: journal
 link-citations: true
 ---
 
@@ -277,7 +278,7 @@ In other words, the columns of the data that get mapped to certain aesthetic fea
 Then, we add another layer to this plot where we define which `geom`etric shapes we want to use to represent each observation in the data.
 In this case we want these to be points, hence `geom_point`.
 
-```{r fig.fullwidth=TRUE}
+```{r fig.fullwidth=TRUE, fig.height=5, fig.width=8}
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
@@ -315,7 +316,7 @@ star_data <- datasaurus_dozen %>%
   filter(dataset == "star")
 ```
 
-```{r fig.fullwidth=TRUE}
+```{r fig.fullwidth=TRUE, fig.height=5, fig.width=8}
 ggplot(data = star_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
@@ -337,7 +338,7 @@ circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
 ```
 
-```{r fig.fullwidth=TRUE}
+```{r fig.fullwidth=TRUE, fig.height=5, fig.width=8}
 ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
